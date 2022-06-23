@@ -82,10 +82,12 @@ namespace ActiveShooters
                     //20% chance the shooter will attack a random pedestrian
                     if(rand.Next(0,101) <= 20){
                         Ped nearestPed = Utilities.GetClosestPed(shooter);
+                        shooter.Task.ClearAllImmediately();
                         shooter.Task.ShootAt(nearestPed);
                     }
                     //Or they will just wander around the area
                     else{
+                        shooter.Task.ClearAllImmediately();
                         shooter.Task.WanderAround(calloutLocation, 8f);
                     }
                 }
