@@ -43,7 +43,7 @@ namespace ActiveShooters
                 //Setup callout
                 InitInfo(calloutLocation);
                 ResponseCode = 3;
-                StartDistance = 180f;
+                StartDistance = 200f;
                 ShortName = "Active Shooters";
                 CalloutDescription = String.Format("Be Advised: Active Shooters reported in the {0} area.\n\t-- Estimated there to be between 2 and 5 armed subjects.\n\t-- Unknown number of casualties at this time.\n\t-- Reports suggest that shots by high powered weapons have been fired.\n\t-- Automatic weapons should be assumed.\n\t-- EMS/Fire standing by. No further information at this time.\n\t-- Proceed with extreme caution.", World.GetZoneLocalizedName(calloutLocation));
             }
@@ -134,7 +134,6 @@ namespace ActiveShooters
             string dialogue = "~r~Suspect~s~: The ~b~Cops~s~ are here! ~r~Shoot~s~ anyone you see!";
             ShowDialog(dialogue, 5000, 25f);
         }
-
         private List<PedHash> GetGroupHashes(){
             //Each list contains similar ped hashes
             List<PedHash> ballers = new List<PedHash>(){
