@@ -8,7 +8,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ActiveShooters</RootNamespace>
-    <AssemblyName>ActiveShooters</AssemblyName>
+    <AssemblyName>ActiveShooters.net</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -54,4 +54,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>xcopy /y /d "$(TargetPath)" "C:\FXServer\txData\CFXDefault_8B9981.base\resources\fivepd\callouts\"</PostBuildEvent>
+  </PropertyGroup>
 </Project>

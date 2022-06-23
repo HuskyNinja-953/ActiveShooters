@@ -5,7 +5,6 @@ using FivePD.API.Utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace ActiveShooters
@@ -52,7 +51,7 @@ namespace ActiveShooters
 
         public override async Task OnAccept(){
             try{
-                InitBlip(50f, BlipColor.Red);
+                InitBlip(50f);
                 UpdateData();
             }
             catch{
@@ -89,8 +88,8 @@ namespace ActiveShooters
                 API.SetRelationshipBetweenGroups(5, 0x6A3B9F86/*GANG GROUP*/, 0x6F0783F5/*PLAYERS*/);
                 API.SetRelationshipBetweenGroups(5, 0x6F0783F5/*PLAYERS*/, 0x6A3B9F86/*GANG GROUP*/);
 
-                //Wait till the closest player 
-                while(World.GetDistance(player.Position,shooters.FirstOrDefault().Position) >= 75f) { await BaseScript.Delay(150); }
+                //Wait till the closest player nears the shooters
+                while(World.GetDistance(player.Position,shooters.FirstOrDefault().Position) >= 55f) { await BaseScript.Delay(150); }
 
                 //Play the callout dialogue when a player gets near the shooters
                 PlayCalloutDialogue();
@@ -100,7 +99,6 @@ namespace ActiveShooters
                     shooter.Task.ClearAllImmediately();
                     shooter.Task.ShootAt(AssignedPlayers.SelectRandom());
                 }
-
             } 
             catch{
                 EndCallout();
