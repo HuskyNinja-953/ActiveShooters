@@ -83,12 +83,15 @@ namespace ActiveShooters
                     if(rand.Next(0,101) <= 20){
                         Ped nearestPed = Utilities.GetClosestPed(shooter);
                         shooter.Task.ClearAllImmediately();
-                        shooter.Task.ShootAt(nearestPed);
+                        //Try and have the shooter shoot at a player assigned to the callout.
+                        //If none are found have the shooter wanter
+                        try { shooter.Task.ShootAt(AssignedPlayers.SelectRandom()); } 
+                        catch { shooter.Task.WanderAround(calloutLocation, 20f); }
                     }
                     //Or they will just wander around the area
                     else{
                         shooter.Task.ClearAllImmediately();
-                        shooter.Task.WanderAround(calloutLocation, 8f);
+                        shooter.Task.WanderAround(calloutLocation, 20f);
                     }
                 }
 
