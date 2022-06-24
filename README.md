@@ -7,5 +7,5 @@ The <strong>Active Shooter Callout</strong> will spawn between 2-5 shooters at o
 Download the project from Releases, open it in Visual Studio. Build the project to get the .dll file. Place the .dll file in your callout folder at 'fivepd\callouts\' .
 #### Option 2: Download the callout at GPM
 
-## Continued Development
-I plan to update this callout as I learn more about creating a well crafted callout.
+## Updates
+I plan to keep this callout updated as new versions of FivePD are released.
