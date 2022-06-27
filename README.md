@@ -8,4 +8,4 @@ Download the project from Releases, open it in Visual Studio. Build the project 
 #### Option 2: Download the callout at GPM
 
 ## Updates
-I plan to keep this callout updated as new versions of FivePD are released.
+I plan to add more locations for the callout to take place and, keep this callout updated as new versions of FivePD are released.
